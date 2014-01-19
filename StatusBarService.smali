@@ -1032,18 +1032,19 @@
     const/4 v3, 0x0
 
     .line 387
-    .local v3, qsv:Lcom/android/systemui/statusbar/quickpanel/QuickSettingsView;
-    const v7, 0x7f030003
+    const v7, 0x3030003
 
     invoke-static {p1, v7, v9}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v3
 
-    .end local v3           #qsv:Lcom/android/systemui/statusbar/quickpanel/QuickSettingsView;
-    check-cast v3, Lcom/android/systemui/statusbar/quickpanel/QuickSettingsView;
+    check-cast v3, Lcom/lidroid/systemui/quickpanel/PowerWidget;
 
-    .line 390
-    .restart local v3       #qsv:Lcom/android/systemui/statusbar/quickpanel/QuickSettingsView;
+    .line 352
+    .local v3, qsv:Lcom/lidroid/systemui/quickpanel/PowerWidget;
+
+    invoke-virtual {v3}, Lcom/lidroid/systemui/quickpanel/PowerWidget;->setupWidget()V
+
     iget-object v7, p0, Lcom/android/systemui/statusbar/StatusBarService;->mExpandedView:Lcom/android/systemui/statusbar/ExpandedView;
 
     invoke-virtual {v7, v3, v12}, Lcom/android/systemui/statusbar/ExpandedView;->addView(Landroid/view/View;I)V
